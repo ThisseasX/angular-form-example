@@ -1,0 +1,57 @@
+<div class="cards">
+  <ng-template ngFor let-item [ngForOf]="todos$ | async">
+    <div class="card" [class.completed]="item.completed">
+      <div class="label-row">
+        <div class="label-value">
+          <p class="label">ID:&nbsp;</p>
+
+          <p class="value">
+            {{ item.id }}
+          </p>
+        </div>
+
+        <div class="label-value">
+          <p class="label">User:&nbsp;</p>
+
+          <p class="value">
+            {{ item.userId }}
+          </p>
+        </div>
+      </div>
+
+      <p class="title">
+        {{ item.title }}
+      </p>
+    </div>
+  </ng-template>
+</div>
+
+<form [formGroup]="newTodo" class="form">
+  <p>{{ newTodo.value.title || "-" }}</p>
+
+  <div>
+    <label for="title">New Todo:</label>&nbsp;
+
+    <input
+      id="title"
+      type="text"
+      formControlName="title"
+      (keydown)="onKeyDown($event)"
+    />
+  </div>
+
+  <div>
+    <label for="completed">Completed:</label>&nbsp;
+
+    <input
+      id="completed"
+      type="checkbox"
+      formControlName="completed"
+      (keydown)="onKeyDown($event)"
+    />
+  </div>
+
+  <button type="button" (click)="saveTodo()" [disabled]="!newTodo.value.title">
+    Save Todo
+  </button>
+</form>

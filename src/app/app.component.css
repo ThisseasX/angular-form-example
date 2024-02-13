@@ -1,0 +1,51 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  background-color: #ffc9ce;
+  gap: 8px;
+  border-radius: 4px;
+}
+
+.completed {
+  background-color: #e4f0dd;
+}
+
+.label {
+  font-size: 16px;
+  margin: 0;
+}
+
+.value {
+  font-size: 12px;
+  margin: 0;
+}
+
+.title {
+  font-size: 14px;
+  margin: 0;
+}
+
+.label-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.label-value {
+  display: flex;
+  align-items: baseline;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: fit-content;
+}
